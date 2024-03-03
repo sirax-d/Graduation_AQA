@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "graduation-project-aqa"
+version = "0.1.0"
+description = "Diplom Project"
+authors = ["Krichanov Sergey <dsirax@icloud.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pytest = "^8.0.0"
+selene = "^1.0.2"
+allure-pytest = "^2.13.2"
+pydantic = "^2.6.3"
+jsonschema = "^4.21.1"
+curlify = "^2.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
