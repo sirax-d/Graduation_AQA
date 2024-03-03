@@ -6,7 +6,7 @@ authors = ["Krichanov Sergey <dsirax@icloud.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 pytest = "^8.0.0"
 selene = "2.0.0rc8"
 allure-pytest = "^2.13.2"
