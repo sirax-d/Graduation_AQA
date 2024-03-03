@@ -1,10 +1,8 @@
+import os
 
 import pytest
-from selene import browser
-import os
 from dotenv import load_dotenv
-import pickle
-
+from selene import browser
 
 load_dotenv()
 base_url = os.getenv("BASE_URL")
