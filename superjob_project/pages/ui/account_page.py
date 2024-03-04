@@ -100,3 +100,5 @@ class AccountPage:
         s(".f-test-tooltip-Nastrojki_Vyjti").click()
         s(".f-test-button-Vyjti").click()
         s(".f-test-link-Vhod").should(be.visible)
+
+account = AccountPage()

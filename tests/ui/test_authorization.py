@@ -1,11 +1,9 @@
 import allure
 import pytest
 
-from superjob_project.pages.ui.account_page import AccountPage
-from superjob_project.pages.ui.base_page import BasePage
+from superjob_project.pages.ui.account_page import account
 
-account = AccountPage()
-base = BasePage()
+
 
 
 @allure.epic('Authorized')
@@ -16,9 +14,9 @@ base = BasePage()
 @allure.label('layer', 'ui')
 def test_create_account():
     with allure.step('Create account'):
-        base.registration()
+        account.registration()
     with allure.step('Check successful registration'):
-        base.check_registration()
+        account.check_registration()
 
 
 @allure.epic('Authorized')
@@ -30,7 +28,7 @@ def test_create_account():
 @pytest.mark.xfail(reason="Нестабильный тест")
 def test_login_and_response():
     with allure.step('Login in SJ site'):
-        base.login()
+        account.login()
     with allure.step('Create response to the vacancy'):
         account.create_response()
     with allure.step('Check response'):
@@ -46,7 +44,7 @@ def test_login_and_response():
 @pytest.mark.xfail(reason="Нестабильный тест, динамические окна")
 def test_create_resume():
     with allure.step('Login in SJ site'):
-        base.login()
+        account.login()
     with allure.step('Create resume'):
         account.create_resume()
 
