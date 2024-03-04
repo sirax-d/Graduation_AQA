@@ -6,6 +6,7 @@ from allure_commons._allure import step
 from allure_commons.types import AttachmentType
 import os
 from dotenv import load_dotenv
+from superjob_project.utils.logging_helper import logging_helper
 
 load_dotenv()
 email = os.getenv("EMAIL")
@@ -20,6 +21,7 @@ def get_request(url, period, keyword, **kwargs):
         curl = curlify.to_curl(response.request)
         allure.attach(body=curl, name="curl", attachment_type=AttachmentType.TEXT, extension="txt")
         logging.info(curlify.to_curl(response.request))
+        logging_helper(response)
     return response
 
 def post_request(url, **kwargs):
@@ -30,6 +32,7 @@ def post_request(url, **kwargs):
         curl = curlify.to_curl(response.request)
         allure.attach(body=curl, name="curl", attachment_type=AttachmentType.TEXT, extension="txt")
         logging.info(curlify.to_curl(response.request))
+        logging_helper(response)
     return response
 
 def put_request(url, **kwargs):
@@ -43,6 +46,7 @@ def put_request(url, **kwargs):
         curl = curlify.to_curl(response.request)
         allure.attach(body=curl, name="curl", attachment_type=AttachmentType.TEXT, extension="txt")
         logging.info(curlify.to_curl(response.request))
+        logging_helper(response)
     return response
 
 def delete_request(url, **kwargs):
@@ -52,4 +56,5 @@ def delete_request(url, **kwargs):
         curl = curlify.to_curl(response.request)
         allure.attach(body=curl, name="curl", attachment_type=AttachmentType.TEXT, extension="txt")
         logging.info(curlify.to_curl(response.request))
+        logging_helper(response)
     return response
