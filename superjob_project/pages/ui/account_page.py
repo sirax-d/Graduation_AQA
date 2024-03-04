@@ -91,10 +91,10 @@ class AccountPage:
         s('[name="password"]').type(password)
         s('.f-test-button-Vojti').click()
         time.sleep(3)
-        browser.open(base_url)
+        # browser.open(base_url)
 
     def logout(self):
-        browser.open(base_url)
+        # browser.open(base_url)
         if s('.f-test-button-Vsjo_verno').matching(be.visible):
             s('.f-test-button-Vsjo_verno').click()
         s(".f-test-tooltip-Nastrojki_Vyjti").click()
