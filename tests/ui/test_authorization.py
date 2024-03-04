@@ -59,7 +59,7 @@ def test_create_resume():
 @allure.label('layer', 'ui')
 def test_resume_visibility_off():
     with allure.step('Login in SJ site'):
-        base.login()
+        account.login()
     with allure.step('Create other resume'):
         account.create_other_resume()
     with allure.step('Close visibility of the resume'):
@@ -76,7 +76,7 @@ def test_resume_visibility_off():
 @allure.label('layer', 'ui')
 def test_auth():
     with allure.step('Login in SJ site'):
-        base.login()
+        account.login()
 
 
 @allure.epic('Authorized')
@@ -87,6 +87,6 @@ def test_auth():
 @allure.label('layer', 'ui')
 def test_logout():
     with allure.step('Login in SJ site'):
-        base.login()
+        account.login()
     with allure.step('Logout'):
-        base.logout()
+        account.logout()

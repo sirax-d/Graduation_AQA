@@ -52,19 +52,7 @@ class BasePage:
         else:
             check_registration()
 
-    def login(self):
-        browser.open(base_url)
-        s("._38FKN.f-test-link-Vhod").click()  # Click on the login button
-        s('[name="login"]').type(email)
-        s('[name="password"]').type(password)
-        s('.f-test-button-Vojti').click()  #
-        browser.open(base_url)
 
-    def logout(self):
-        browser.open(base_url)
-        s(".f-test-tooltip-Nastrojki_Vyjti").click()
-        s(".f-test-button-Vyjti").click()
-        s(".f-test-link-Vhod").should(be.visible)
 
     def advertising(self):
         browser.open(base_url)

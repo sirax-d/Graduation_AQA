@@ -47,6 +47,8 @@ class AccountPage:
 
     def close_visibility(self):
         browser.open(base_url + "/user/resume/")
+        if s('.f-test-button-Vsjo_verno').matching(be.visible):
+            s('.f-test-button-Vsjo_verno').click()
         ss(".f-test-clickable-Izmenit")[0].click()
         s(".f-test-switcher-button-Dostup_k_rezyume_zakryt").click()
         s(".f-test-button-Sohranit").click()
@@ -79,3 +81,20 @@ class AccountPage:
         s('[name="responsibility"]').type("Изучал автоматизацию тестирования")
         s(".f-test-button-Sohranit").click()
         time.sleep(5)
+
+    def login(self):
+        browser.open(base_url)
+        if s('.f-test-button-Vsjo_verno').matching(be.visible):
+            s('.f-test-button-Vsjo_verno').click()
+        s("._38FKN.f-test-link-Vhod").click()  # Click on the login button
+        s('[name="login"]').type(email)
+        s('[name="password"]').type(password)
+        s('.f-test-button-Vojti').click()  #
+        browser.open(base_url)
+    def logout(self):
+        browser.open(base_url)
+        if s('.f-test-button-Vsjo_verno').matching(be.visible):
+            s('.f-test-button-Vsjo_verno').click()
+        s(".f-test-tooltip-Nastrojki_Vyjti").click()
+        s(".f-test-button-Vyjti").click()
+        s(".f-test-link-Vhod").should(be.visible)
