@@ -13,7 +13,7 @@ password = os.getenv("PASSWORD")
 
 class AccountPage:
     def create_resume(self):
-        browser.open("/user/resume/")
+        browser.open("user/resume/")
         if s('.f-test-button-Vsjo_verno').matching(be.visible):
             s('.f-test-button-Vsjo_verno').click()
         s(".f-test-button-Sozdat_rezyume").should(be.clickable).click()
@@ -35,7 +35,7 @@ class AccountPage:
 
     def create_response(self):
         browser.open()
-        browser.open('/vakansii/inzhener-47454519.html')
+        browser.open('vakansii/inzhener-47454519.html')
         if s('.f-test-button-Vsjo_verno').matching(be.visible):
             s('.f-test-button-Vsjo_verno').click()
         s('.f-test-button-Otkliknutsya').click()
@@ -43,7 +43,7 @@ class AccountPage:
         s('.f-test-button-close').click()
 
     def close_visibility(self):
-        browser.open("/user/resume/")
+        browser.open("user/resume/")
         if s('.f-test-button-Vsjo_verno').matching(be.visible):
             s('.f-test-button-Vsjo_verno').click()
         ss(".f-test-clickable-Izmenit")[0].click()
@@ -51,11 +51,11 @@ class AccountPage:
         s(".f-test-button-Sohranit").click()
 
     def check_visibility(self):
-        browser.open("/user/resume/")
+        browser.open("user/resume/")
         s(".f-test-resume_card").should(have.text("Доступ к резюме закрыт"))
 
     def check_response(self):
-        browser.open("/user/responses/")
+        browser.open("user/responses/")
         s(".f-test-response-list").should(be.visible)
 
     def create_other_resume(self):

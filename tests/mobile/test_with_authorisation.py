@@ -1,5 +1,4 @@
 import allure
-import pytest
 
 from superjob_project.pages.mobile.auth_page import account_page
 
