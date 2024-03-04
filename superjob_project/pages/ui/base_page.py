@@ -50,8 +50,6 @@ class BasePage:
         else:
             check_registration()
 
-
-
     def advertising(self):
         browser.open("")
         s(".f-test-link-Reklama_na_sajte").click()
@@ -73,5 +71,6 @@ class BasePage:
         s(".f-test-button-Primenit").click()
         s("._3fBtg").should(have.text("Санкт-Петербург"))
         time.sleep(2)
+
 
 base = BasePage()

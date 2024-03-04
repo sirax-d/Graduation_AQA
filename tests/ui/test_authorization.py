@@ -5,8 +5,6 @@ from superjob_project.pages.ui.account_page import account
 from superjob_project.pages.ui.base_page import base
 
 
-
-
 @allure.epic('Authorized')
 @allure.label("owner", "Autohrized user")
 @allure.feature("Checking the authorization of the user")

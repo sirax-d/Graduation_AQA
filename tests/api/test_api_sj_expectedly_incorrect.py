@@ -1,14 +1,13 @@
 import os
+
 import allure
 from allure_commons._allure import step
 from dotenv import load_dotenv
+
 from superjob_project.utils.base_requests import put_request, delete_request
-
-
 
 load_dotenv()
 base_url_api = os.getenv("BASE_URL_API")
-
 
 
 @allure.epic('API')
@@ -39,4 +38,6 @@ def test_unblock_company():
         body = response.json()
         assert response.status_code != 200
         assert 'error' in body
-        assert 'message' in body['error'] and 'Неправильно набран адрес, или такой страницы "2.0/clients/1000000/block" на сайте больше не существует' in body['error']['message']
+        assert 'message' in body[
+            'error'] and 'Неправильно набран адрес, или такой страницы "2.0/clients/1000000/block" на сайте больше не существует' in \
+               body['error']['message']

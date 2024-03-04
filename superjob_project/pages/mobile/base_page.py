@@ -1,8 +1,9 @@
-from selene.support.shared.jquery_style import s, ss
-from appium.webdriver.common.appiumby import AppiumBy
-from selene import have, be
-from dotenv import load_dotenv
 import os
+
+from appium.webdriver.common.appiumby import AppiumBy
+from dotenv import load_dotenv
+from selene import have, be
+from selene.support.shared.jquery_style import s, ss
 
 load_dotenv()
 email = os.getenv("EMAIL")
@@ -39,5 +40,6 @@ class SuperJobBasePage:
 
     def check_results_vacancy(self):
         s((AppiumBy.CLASS_NAME, 'android.widget.TextView')).should(have.text('ВАКАНСИЙ'))
+
 
 base_page = SuperJobBasePage()

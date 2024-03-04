@@ -1,7 +1,8 @@
 import logging
+
 import allure
-from allure_commons.types import AttachmentType
 import curlify
+from allure_commons.types import AttachmentType
 
 
 def logging_helper(response):

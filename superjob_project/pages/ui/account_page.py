@@ -76,7 +76,6 @@ class AccountPage:
         s('[name="responsibility"]').type("Изучал автоматизацию тестирования")
         s(".f-test-button-Sohranit").click()
 
-
     def login(self):
         browser.open("")
         if s('.f-test-button-Vsjo_verno').matching(be.visible):
@@ -92,5 +91,6 @@ class AccountPage:
         s(".f-test-tooltip-Nastrojki_Vyjti").click()
         s(".f-test-button-Vyjti").click()
         s(".f-test-link-Vhod").should(be.visible)
+
 
 account = AccountPage()

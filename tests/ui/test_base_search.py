@@ -1,8 +1,6 @@
-from superjob_project.pages.ui.base_page import base
 import allure
-import pytest
-from selene import browser
 
+from superjob_project.pages.ui.base_page import base
 
 
 @allure.epic('Unauthorized')
@@ -25,6 +23,7 @@ def test_follow_links():
 def test_change_type():
     with allure.step('Change type'):
         base.change_type()
+
 
 @allure.epic('Unauthorized')
 @allure.label("owner", "Without autohrized user")
