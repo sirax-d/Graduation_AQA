@@ -89,12 +89,9 @@ class AccountPage:
         s("._38FKN.f-test-link-Vhod").click()  # Click on the login button
         s('[name="login"]').type(email)
         s('[name="password"]').type(password)
-        s('.f-test-button-Vojti').click()
-        time.sleep(3)
-        # browser.open(base_url)
+        s('.f-test-button-Vojti').with_(timeout=3).click()
 
     def logout(self):
-        # browser.open(base_url)
         if s('.f-test-button-Vsjo_verno').matching(be.visible):
             s('.f-test-button-Vsjo_verno').click()
         s(".f-test-tooltip-Nastrojki_Vyjti").click()

@@ -1,8 +1,6 @@
 from superjob_project.pages.ui.base_page import base
 import allure
 
-# account = AccountPage()
-# base = BasePage()
 
 @allure.epic('Unauthorized')
 @allure.label("owner", "Without autohrized user")

@@ -2,6 +2,7 @@ import allure
 import pytest
 
 from superjob_project.pages.ui.account_page import account
+from superjob_project.pages.ui.base_page import base
 
 
 
@@ -14,9 +15,9 @@ from superjob_project.pages.ui.account_page import account
 @allure.label('layer', 'ui')
 def test_create_account():
     with allure.step('Create account'):
-        account.registration()
+        base.registration()
     with allure.step('Check successful registration'):
-        account.check_registration()
+        base.check_registration()
 
 
 @allure.epic('Authorized')

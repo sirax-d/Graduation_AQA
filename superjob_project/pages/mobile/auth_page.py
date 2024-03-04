@@ -25,7 +25,7 @@ class SuperJobAccountPage:
 
     def sj_find_vacancy_login(self):
         s((AppiumBy.XPATH, '//android.widget.TextView[@text="Поиск работы"]')).click()
-        s((AppiumBy.CLASS_NAME, 'android.widget.EditText')).type('Python')
+        s((AppiumBy.CLASS_NAME, 'android.widget.EditText')).type('Python').with_(timeout=30)
         ss((AppiumBy.CLASS_NAME, 'android.widget.TextView'))[1].click()
 
     def check_results_vacancy(self):
