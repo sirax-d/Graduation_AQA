@@ -75,7 +75,7 @@ allure serve allure-results
 ![This is an image](/resources/screens/allure.png)
 
 ### Интеграция с jira
-![This is an image](/resources/screens/jira.png)
+![This is an image](/resources/screens/jira_a.png)
 
 ### Интеграция с Allure TestOps
 ![This is an image](/resources/screens/testops.png)
