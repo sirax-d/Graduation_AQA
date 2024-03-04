@@ -1,5 +1,8 @@
 from superjob_project.pages.ui.base_page import base
 import allure
+import pytest
+from selene import browser
+
 
 
 @allure.epic('Unauthorized')

@@ -15,7 +15,7 @@ phone = os.getenv("MOBILE_NUMBER")
 
 class BasePage:
     def registration(self):
-        browser.open()
+        browser.open("")
         s("._38FKN.f-test-link-Registraciya").click()
         s(".f-test-link-Ya_ischu_rabotu_Hochu_razmestit_rezyume_i_otklikatsya_na_vakansii_luchshih_kompanij").click()
         s('[name="person.firstName"]').type(person.first_name)
@@ -38,10 +38,10 @@ class BasePage:
         if s('.f-test-formField-error').matching(be.visible):
             pytest.skip('Мы уже зарегистрированы, тест пропущен')
         else:
-            browser.open()
+            browser.open("")
 
     def check_registration(self):
-        browser.open()
+        browser.open("")
         s(".f-test-tooltip-Nastrojki_Vyjti").should(be.visible)
 
     if __name__ == '__main__':
@@ -53,19 +53,19 @@ class BasePage:
 
 
     def advertising(self):
-        browser.open()
+        browser.open("")
         s(".f-test-link-Reklama_na_sajte").click()
         browser.switch_to_next_tab()
         s(".t-animate_started").should(be.visible)
 
     def change_type(self):
-        browser.open()
+        browser.open("")
         s(".f-test-select-selected").click()
         ss("._6fVtm")[2].click()
         s(".f-test-select-selected").should(have.text("Резюме"))
 
     def region_search(self):
-        browser.open()
+        browser.open("")
         s("._3fBtg").click()
         s(".f-test-button-Ochistit").click()
         s(".f-test-input-geo").type("Санкт-Петербург")

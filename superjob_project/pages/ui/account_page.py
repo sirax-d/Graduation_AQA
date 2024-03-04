@@ -34,7 +34,7 @@ class AccountPage:
         s("._2yXpl._2d-4z.I16fU._3bSIo").should(have.text("Отлично! Резюме опубликовано"))
 
     def create_response(self):
-        browser.open()
+        browser.open("")
         browser.open('vakansii/inzhener-47454519.html')
         if s('.f-test-button-Vsjo_verno').matching(be.visible):
             s('.f-test-button-Vsjo_verno').click()
@@ -59,7 +59,7 @@ class AccountPage:
         s(".f-test-response-list").should(be.visible)
 
     def create_other_resume(self):
-        browser.open()
+        browser.open("")
         if s('.f-test-button-Vsjo_verno').matching(be.visible):
             s('.f-test-button-Vsjo_verno').click()
         s(".f-test-button-dehaze").click()
@@ -79,7 +79,7 @@ class AccountPage:
 
 
     def login(self):
-        browser.open()
+        browser.open("")
         if s('.f-test-button-Vsjo_verno').matching(be.visible):
             s('.f-test-button-Vsjo_verno').click()
         s("._38FKN.f-test-link-Vhod").click()  # Click on the login button
