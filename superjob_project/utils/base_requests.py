@@ -1,9 +1,5 @@
-import logging
-import allure
-import curlify
 import requests
 from allure_commons._allure import step
-from allure_commons.types import AttachmentType
 import os
 from dotenv import load_dotenv
 from superjob_project.utils.logging_helper import logging_helper
@@ -18,9 +14,6 @@ def get_request(url, period, keyword, **kwargs):
     base_url = "https://api.superjob.ru/2.0/"
     with step(f"GET {url}"):
         response = requests.get(base_url + url, params=params,headers=headers, **kwargs)
-        curl = curlify.to_curl(response.request)
-        allure.attach(body=curl, name="curl", attachment_type=AttachmentType.TEXT, extension="txt")
-        logging.info(curlify.to_curl(response.request))
         logging_helper(response)
     return response
 
@@ -29,9 +22,6 @@ def post_request(url, **kwargs):
     base_url = "https://api.superjob.ru/2.0/"
     with step(f"POST {url}"):
         response = requests.post(base_url + url, headers=headers, params=params,  **kwargs)
-        curl = curlify.to_curl(response.request)
-        allure.attach(body=curl, name="curl", attachment_type=AttachmentType.TEXT, extension="txt")
-        logging.info(curlify.to_curl(response.request))
         logging_helper(response)
     return response
 
@@ -43,9 +33,6 @@ def put_request(url, **kwargs):
     base_url = "https://api.superjob.ru/2.0/"
     with step(f"PUT {url}"):
         response = requests.put(base_url + url, params=params, **kwargs)
-        curl = curlify.to_curl(response.request)
-        allure.attach(body=curl, name="curl", attachment_type=AttachmentType.TEXT, extension="txt")
-        logging.info(curlify.to_curl(response.request))
         logging_helper(response)
     return response
 
@@ -53,8 +40,5 @@ def delete_request(url, **kwargs):
     base_url = "https://api.superjob.ru/2.0/"
     with step(f"DELETE {url}"):
         response = requests.delete(base_url + url, **kwargs)
-        curl = curlify.to_curl(response.request)
-        allure.attach(body=curl, name="curl", attachment_type=AttachmentType.TEXT, extension="txt")
-        logging.info(curlify.to_curl(response.request))
         logging_helper(response)
     return response
