@@ -61,9 +61,9 @@ Python Pytest PyCharm Selenoid Selene Jenkins Allure Report Telegram AllureTestO
   ```
 4. Для запусков тестов локально используйте команд:
   ```bash
-  pytest -sv -m mobile tests/mobile/
-  pytest -sv -m web
-  pytest -sv -m api
+  pytest -sv tests/mobile/
+  pytest -sv tests/ui/
+  pytest -sv tests/api/
   ```
 
 Получение отчёта allure:
@@ -72,16 +72,16 @@ allure serve allure-results
 ```
 
 ### Настроено автоматическое оповещение о результатах сборки Jenkins в Telegram-бот
-![This is an image](/resources/screens/bot.png)
+![This is an image](/resources/screens/allure.png)
 
 ### Интеграция с jira
 ![This is an image](/resources/screens/jira.png)
 
 ### Интеграция с Allure TestOps
-![This is an image](/resources/screens/TestOps.png)
+![This is an image](/resources/screens/testops.png)
 
-### Пример видеозаписи прохождения мобильных тестов тестов
+### Пример видеозаписи прохождения мобильных тестов
 ![This is an image](/resources/screens/company_info.gif)
 
-### Пример видеозаписи прохождения мобильных тестов тестов
+### Пример видеозаписи прохождения UI тестов
 ![This is an image](/resources/screens/mobile_login.gif)
