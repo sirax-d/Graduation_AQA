@@ -9,15 +9,13 @@ from selene.support.shared.jquery_style import s, ss
 from superjob_project.data.ui.users import person, employment, time_w
 
 load_dotenv()
-base_url = os.getenv("BASE_URL")
 email = os.getenv("EMAIL")
-password = os.getenv("PASSWORD")
 phone = os.getenv("MOBILE_NUMBER")
 
 
 class BasePage:
     def registration(self):
-        browser.open(base_url)
+        browser.open()
         s("._38FKN.f-test-link-Registraciya").click()
         s(".f-test-link-Ya_ischu_rabotu_Hochu_razmestit_rezyume_i_otklikatsya_na_vakansii_luchshih_kompanij").click()
         s('[name="person.firstName"]').type(person.first_name)
@@ -40,10 +38,10 @@ class BasePage:
         if s('.f-test-formField-error').matching(be.visible):
             pytest.skip('Мы уже зарегистрированы, тест пропущен')
         else:
-            browser.open(base_url)
+            browser.open()
 
     def check_registration(self):
-        browser.open(base_url)
+        browser.open()
         s(".f-test-tooltip-Nastrojki_Vyjti").should(be.visible)
 
     if __name__ == '__main__':
@@ -55,19 +53,19 @@ class BasePage:
 
 
     def advertising(self):
-        browser.open(base_url)
+        browser.open()
         s(".f-test-link-Reklama_na_sajte").click()
         browser.switch_to_next_tab()
         s(".t-animate_started").should(be.visible)
 
     def change_type(self):
-        browser.open(base_url)
+        browser.open()
         s(".f-test-select-selected").click()
         ss("._6fVtm")[2].click()
         s(".f-test-select-selected").should(have.text("Резюме"))
 
     def region_search(self):
-        browser.open(base_url)
+        browser.open()
         s("._3fBtg").click()
         s(".f-test-button-Ochistit").click()
         s(".f-test-input-geo").type("Санкт-Петербург")

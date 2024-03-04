@@ -10,7 +10,6 @@ from superjob_project.pages.mobile.auth_page import account_page
 @allure.tag('mobile', 'normal')
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
-@pytest.mark.mobile
 def test_login_mobile():
     with allure.step('Логинимся'):
         account_page.sj_mobile_login()
@@ -24,7 +23,6 @@ def test_login_mobile():
 @allure.tag('mobile', 'normal')
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
-@pytest.mark.mobile
 def test_search_with_login():
     with allure.step('Логинимся'):
         account_page.sj_mobile_login()

@@ -10,7 +10,6 @@ from superjob_project.pages.mobile.base_page import base_page
 @allure.tag('mobile', 'normal')
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
-@pytest.mark.mobile
 def test_search_vacancy():
     with allure.step('Ищем вакансию без авторизации'):
         base_page.sj_find_vacancy_without_login()
@@ -24,7 +23,6 @@ def test_search_vacancy():
 @allure.tag('mobile', 'normal')
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
-@pytest.mark.mobile
 def test_company_info():
     with allure.step('Переходим в информацию о компании SJ без авторизации'):
         base_page.sj_info()
