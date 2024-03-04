@@ -89,8 +89,8 @@ class AccountPage:
         s("._38FKN.f-test-link-Vhod").click()  # Click on the login button
         s('[name="login"]').type(email)
         s('[name="password"]').type(password)
-        s('.f-test-button-Vojti').click()  #
-        browser.open(base_url)
+        s('.f-test-button-Vojti').click()
+
     def logout(self):
         browser.open(base_url)
         if s('.f-test-button-Vsjo_verno').matching(be.visible):

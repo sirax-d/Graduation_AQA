@@ -38,7 +38,7 @@ Python Pytest PyCharm Selenoid Selene Jenkins Allure Report Telegram AllureTestO
 ### Для запуска автотестов в Jenkins
 #### 1. Открыть <a target="_blank" href="https://jenkins.autotests.cloud/job/Graduation_Project_AQA/">проект</a>
 
-![This is an image](/resources/screens/Jenkins_main.png)
+![This is an image](/resources/screens/jenkins_main.png)
 
 #### 2. Выбрать пункт **Собрать с параметрами**
 #### 3. В случае необходимости изменить версию браузера
