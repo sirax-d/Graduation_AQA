@@ -84,4 +84,4 @@ allure serve allure-results
 ![This is an image](/resources/screens/company_info.gif)
 
 ### Пример видеозаписи прохождения UI тестов
-![This is an image](/resources/screens/mobile_login.gif)
+![This is an image](/resources/screens/ui.gif)
