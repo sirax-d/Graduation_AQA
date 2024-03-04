@@ -90,6 +90,8 @@ class AccountPage:
         s('[name="login"]').type(email)
         s('[name="password"]').type(password)
         s('.f-test-button-Vojti').click()
+        time.sleep(3)
+        browser.open(base_url)
 
     def logout(self):
         browser.open(base_url)
