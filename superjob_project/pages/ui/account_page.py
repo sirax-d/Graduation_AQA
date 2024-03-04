@@ -59,7 +59,6 @@ class AccountPage:
         s(".f-test-response-list").should(be.visible)
 
     def create_other_resume(self):
-        browser.open("")
         if s('.f-test-button-Vsjo_verno').matching(be.visible):
             s('.f-test-button-Vsjo_verno').click()
         s(".f-test-button-dehaze").click()
