@@ -79,7 +79,7 @@ allure serve allure-results
 ![This is an image](/resources/screens/jira_a.png)
 
 ### Интеграция с Allure TestOps
-![This is an image](/resources/screens/testops.png)
+![This is an image](/resources/screens/test_ops.png)
 
 ### Пример видеозаписи прохождения мобильных тестов
 ![This is an image](/resources/screens/company_info.gif)
