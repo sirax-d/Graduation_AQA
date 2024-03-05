@@ -10,12 +10,9 @@ from superjob_project.pages.ui.base_page import base
 @allure.severity('normal')
 @allure.label('layer', 'ui')
 def test_follow_links():
-    with allure.step('Preparing for the test'):
-        base.open()
-    with allure.step('Check advertising'):
-        base.advertising()
-    with allure.step('Check links'):
-        base.check_advertising()
+    base.open()
+    base.advertising()
+    base.check_advertising()
 
 
 @allure.epic('Unauthorized')
@@ -25,12 +22,9 @@ def test_follow_links():
 @allure.severity('normal')
 @allure.label('layer', 'ui')
 def test_change_type():
-    with allure.step('Preparing for the test'):
-        base.open()
-    with allure.step('Change type'):
-        base.change_type()
-    with allure.step('Check "change type"'):
-        base.check_change_type()
+    base.open()
+    base.change_type()
+    base.check_change_type()
 
 
 @allure.epic('Unauthorized')
@@ -40,9 +34,6 @@ def test_change_type():
 @allure.severity('normal')
 @allure.label('layer', 'ui')
 def test_region_search():
-    with allure.step('Preparing for the test'):
-        base.open()
-    with allure.step('Region search'):
-        base.region_search()
-    with allure.step('Check "region search"'):
-        base.check_region_search()
+    base.open()
+    base.region_search()
+    base.check_region_search()
