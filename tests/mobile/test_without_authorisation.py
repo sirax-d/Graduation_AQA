@@ -10,10 +10,8 @@ from superjob_project.pages.mobile.base_page import base_page
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
 def test_search_vacancy():
-    with allure.step('Ищем вакансию без авторизации'):
-        base_page.find_vacancy_without_login()
-    with allure.step('Проверяем результаты поиска'):
-        base_page.check_results_vacancy()
+    base_page.find_vacancy_without_login()
+    base_page.check_results_vacancy()
 
 
 @allure.epic('Unauthorized')
@@ -23,10 +21,8 @@ def test_search_vacancy():
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
 def test_company_info():
-    with allure.step('Переходим в информацию о компании SJ без авторизации'):
-        base_page.info()
-    with allure.step('Проверяем наличие информации о компании'):
-        base_page.company_info_check()
+    base_page.info()
+    base_page.company_info_check()
 
 
 @allure.epic('Unauthorized')
@@ -36,7 +32,5 @@ def test_company_info():
 @allure.severity('normal')
 @allure.label('layer', 'mobile')
 def test_response_menu():
-    with allure.step('Переходим в  меню откликов неавторизованным пользователем'):
-        base_page.response()
-    with allure.step('Проверяем наличие информации в меню откликов'):
-        base_page.response_check()
+    base_page.response()
+    base_page.response_check()
