@@ -46,7 +46,7 @@ Python Pytest PyCharm Selenoid Selene Jenkins Allure Report Telegram AllureTestO
 #### 4. Нажать **Собрать**
 #### 5. Результат запуска сборки можно посмотреть в отчёте Allure
 
-![This is an image](/resources/screens/allure-report.png)
+![This is an image](/resources/screens/allure-report1.png)
 
 ### Локальный запуск автотестов
 1. Клонируйте репозиторий на свой локальный компьютер при помощи git clone
