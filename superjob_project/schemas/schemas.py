@@ -1,4 +1,4 @@
-post_vacancy_forgot_password_schema = {
+vacancy_forgot_password_schema = {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "type": "object",
     "properties": {
@@ -15,7 +15,7 @@ post_vacancy_forgot_password_schema = {
     ]
 }
 
-get_vacancies_schema = {
+vacancies_list_schema = {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Generated schema for Root",
     "type": "object",
@@ -563,5 +563,664 @@ get_vacancies_schema = {
         "more",
         "subscription_id",
         "subscription_active"
+    ]
+}
+
+vacancy_id_schema = {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "canEdit": {
+            "type": "boolean"
+        },
+        "is_closed": {
+            "type": "boolean"
+        },
+        "id": {
+            "type": "integer"
+        },
+        "id_client": {
+            "type": "integer"
+        },
+        "payment_from": {
+            "type": "integer"
+        },
+        "payment_to": {
+            "type": "integer"
+        },
+        "date_pub_to": {
+            "type": "integer"
+        },
+        "date_archived": {
+            "type": "integer"
+        },
+        "date_published": {
+            "type": "integer"
+        },
+        "address": {
+            "type": "null"
+        },
+        "profession": {
+            "type": "string"
+        },
+        "work": {
+            "type": "null"
+        },
+        "compensation": {
+            "type": "null"
+        },
+        "candidat": {
+            "type": "string"
+        },
+        "metro": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "id_metro_line": {
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "title",
+                        "id_metro_line"
+                    ]
+                }
+            ]
+        },
+        "currency": {
+            "type": "string"
+        },
+        "vacancyRichText": {
+            "type": "string"
+        },
+        "covid_vaccination_requirement": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "title"
+            ]
+        },
+        "moveable": {
+            "type": "boolean"
+        },
+        "agreement": {
+            "type": "boolean"
+        },
+        "anonymous": {
+            "type": "boolean"
+        },
+        "is_archive": {
+            "type": "boolean"
+        },
+        "is_storage": {
+            "type": "boolean"
+        },
+        "type_of_work": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "title"
+            ]
+        },
+        "place_of_work": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "title"
+            ]
+        },
+        "education": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "title"
+            ]
+        },
+        "experience": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "title"
+            ]
+        },
+        "maritalstatus": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "title"
+            ]
+        },
+        "children": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "title"
+            ]
+        },
+        "client": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "link": {
+                    "type": "string"
+                },
+                "industry": {
+                    "type": "array",
+                    "items": {}
+                },
+                "description": {
+                    "type": "string"
+                },
+                "vacancy_count": {
+                    "type": "integer"
+                },
+                "staff_count": {
+                    "type": "string"
+                },
+                "client_logo": {
+                    "type": "string"
+                },
+                "address": {
+                    "type": "string"
+                },
+                "addresses": {
+                    "type": "array",
+                    "items": [
+                        {
+                            "type": "object",
+                            "properties": {
+                                "addressString": {
+                                    "type": "string"
+                                },
+                                "latitude": {
+                                    "type": "number"
+                                },
+                                "longitude": {
+                                    "type": "number"
+                                },
+                                "phones": {
+                                    "type": "array",
+                                    "items": {}
+                                }
+                            },
+                            "required": [
+                                "addressString",
+                                "latitude",
+                                "longitude",
+                                "phones"
+                            ]
+                        }
+                    ]
+                },
+                "url": {
+                    "type": "string"
+                },
+                "short_reg": {
+                    "type": "boolean"
+                },
+                "is_blocked": {
+                    "type": "boolean"
+                },
+                "registered_date": {
+                    "type": "integer"
+                },
+                "town": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "declension": {
+                            "type": "string"
+                        },
+                        "hasMetro": {
+                            "type": "boolean"
+                        },
+                        "genitive": {
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "title",
+                        "declension",
+                        "hasMetro",
+                        "genitive"
+                    ]
+                }
+            },
+            "required": [
+                "id",
+                "title",
+                "link",
+                "industry",
+                "description",
+                "vacancy_count",
+                "staff_count",
+                "client_logo",
+                "address",
+                "addresses",
+                "url",
+                "short_reg",
+                "is_blocked",
+                "registered_date",
+                "town"
+            ]
+        },
+        "languages": {
+            "type": "array",
+            "items": {}
+        },
+        "driving_licence": {
+            "type": "array",
+            "items": {}
+        },
+        "catalogues": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "key": {
+                            "type": "integer"
+                        },
+                        "positions": {
+                            "type": "array",
+                            "items": [
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "key": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "title",
+                                        "key"
+                                    ]
+                                },
+                                {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        },
+                                        "key": {
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "title",
+                                        "key"
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "required": [
+                        "id",
+                        "title",
+                        "key",
+                        "positions"
+                    ]
+                }
+            ]
+        },
+        "agency": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "title"
+            ]
+        },
+        "town": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "declension": {
+                    "type": "string"
+                },
+                "hasMetro": {
+                    "type": "boolean"
+                },
+                "genitive": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "title",
+                "declension",
+                "hasMetro",
+                "genitive"
+            ]
+        },
+        "already_sent_on_vacancy": {
+            "type": "boolean"
+        },
+        "rejected": {
+            "type": "boolean"
+        },
+        "response_info": {
+            "type": "array",
+            "items": {}
+        },
+        "phone": {
+            "type": "string"
+        },
+        "phones": {
+            "type": "array",
+            "items": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "number": {
+                            "type": "string"
+                        },
+                        "additionalNumber": {
+                            "type": "null"
+                        }
+                    },
+                    "required": [
+                        "number",
+                        "additionalNumber"
+                    ]
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "number": {
+                            "type": "string"
+                        },
+                        "additionalNumber": {
+                            "type": "null"
+                        }
+                    },
+                    "required": [
+                        "number",
+                        "additionalNumber"
+                    ]
+                }
+            ]
+        },
+        "fax": {
+            "type": "null"
+        },
+        "faxes": {
+            "type": "null"
+        },
+        "client_logo": {
+            "type": "string"
+        },
+        "highlight": {
+            "type": "boolean"
+        },
+        "age_from": {
+            "type": "integer"
+        },
+        "age_to": {
+            "type": "integer"
+        },
+        "gender": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "title"
+            ]
+        },
+        "firm_name": {
+            "type": "string"
+        },
+        "firm_activity": {
+            "type": "string"
+        },
+        "link": {
+            "type": "string"
+        },
+        "video": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "url",
+                "type"
+            ]
+        },
+        "latitude": {
+            "type": "null"
+        },
+        "longitude": {
+            "type": "null"
+        }
+    },
+    "required": [
+        "canEdit",
+        "is_closed",
+        "id",
+        "id_client",
+        "payment_from",
+        "payment_to",
+        "date_pub_to",
+        "date_archived",
+        "date_published",
+        "address",
+        "profession",
+        "work",
+        "compensation",
+        "candidat",
+        "metro",
+        "currency",
+        "vacancyRichText",
+        "covid_vaccination_requirement",
+        "moveable",
+        "agreement",
+        "anonymous",
+        "is_archive",
+        "is_storage",
+        "type_of_work",
+        "place_of_work",
+        "education",
+        "experience",
+        "maritalstatus",
+        "children",
+        "client",
+        "languages",
+        "driving_licence",
+        "catalogues",
+        "agency",
+        "town",
+        "already_sent_on_vacancy",
+        "rejected",
+        "response_info",
+        "phone",
+        "phones",
+        "fax",
+        "faxes",
+        "client_logo",
+        "highlight",
+        "age_from",
+        "age_to",
+        "gender",
+        "firm_name",
+        "firm_activity",
+        "link",
+        "video",
+        "latitude",
+        "longitude"
+    ]
+}
+
+invalid_token_schema = {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "error": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "code",
+                "message",
+                "error"
+            ]
+        }
+    },
+    "required": [
+        "error"
+    ]
+}
+
+invalid_unblock_company_schema = {
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+        "error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer"
+                },
+                "message": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "code",
+                "message"
+            ]
+        }
+    },
+    "required": [
+        "error"
     ]
 }

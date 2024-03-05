@@ -1,38 +1,31 @@
-import os
-
 from appium.webdriver.common.appiumby import AppiumBy
-from dotenv import load_dotenv
 from selene import have, be
 from selene.support.shared.jquery_style import s, ss
 
-load_dotenv()
-email = os.getenv("EMAIL")
-password = os.getenv("PASSWORD")
 
+class BasePage:
 
-class SuperJobBasePage:
-
-    def sj_info(self):
+    def info(self):
         s((AppiumBy.ID, 'ru.superjob.client.android:id/closeButton')).click()
         s((AppiumBy.ID, 'ru.superjob.client.android:id/actionMore')).click()
         s((AppiumBy.XPATH, '//android.widget.TextView[@text="О компании"]')).click()
 
-    def sj_company_info_check(self):
+    def company_info_check(self):
         s((AppiumBy.XPATH,
            '//android.widget.TextView[@resource-id="ru.superjob.client.android:id/companyHeaderDescription"]')) \
             .should(have.text('Клиент SuperJob с 2000 года'))
 
-    def sj_response(self):
+    def response(self):
         s((AppiumBy.ID, 'ru.superjob.client.android:id/closeButton')).click()
         s((AppiumBy.ID, 'ru.superjob.client.android:id/actionResponses')).click()
 
-    def sj_response_check(self):
+    def response_check(self):
         s((AppiumBy.CLASS_NAME, 'android.widget.TextView')).should(have.text('Здесь будут ваши отклики'))
         s((AppiumBy.XPATH,
            '//android.widget.ScrollView/android.view.View/android.view.View/android.widget.Button')).matching(
             be.visible)
 
-    def sj_find_vacancy_without_login(self):
+    def find_vacancy_without_login(self):
         s((AppiumBy.ID, 'ru.superjob.client.android:id/closeButton')).click()
         s((AppiumBy.XPATH, '//android.widget.TextView[@text="Поиск работы"]')).click()
         s((AppiumBy.CLASS_NAME, 'android.widget.EditText')).type('Python')
@@ -42,4 +35,4 @@ class SuperJobBasePage:
         s((AppiumBy.CLASS_NAME, 'android.widget.TextView')).should(have.text('ВАКАНСИЙ'))
 
 
-base_page = SuperJobBasePage()
+base_page = BasePage()

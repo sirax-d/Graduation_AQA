@@ -12,6 +12,8 @@ from superjob_project.pages.ui.base_page import base
 @allure.severity('normal')
 @allure.label('layer', 'ui')
 def test_create_account():
+    with allure.step('Preconditions: open SJ site'):
+        base.open()
     with allure.step('Create account'):
         base.registration()
     with allure.step('Check successful registration'):
@@ -26,9 +28,10 @@ def test_create_account():
 @allure.label('layer', 'ui')
 @pytest.mark.xfail(reason="Нестабильный тест")
 def test_login_and_response():
-    with allure.step('Login in SJ site'):
+    with allure.step('Preconditions: open SJ site'):
+        base.open()
+    with allure.step('Login in SJ site and create response to the vacancy'):
         account.login()
-    with allure.step('Create response to the vacancy'):
         account.create_response()
     with allure.step('Check response'):
         account.check_response()
@@ -42,10 +45,13 @@ def test_login_and_response():
 @allure.label('layer', 'ui')
 @pytest.mark.xfail(reason="Нестабильный тест, динамические окна")
 def test_create_resume():
-    with allure.step('Login in SJ site'):
+    with allure.step('Preconditions: open SJ site'):
+        base.open()
+    with allure.step('Login in SJ site and create resume'):
         account.login()
-    with allure.step('Create resume'):
         account.create_resume()
+    with allure.step('Check create resume'):
+        account.check_create_resume()
 
 
 @allure.epic('Authorized')
@@ -72,8 +78,12 @@ def test_resume_visibility_off():
 @allure.severity('normal')
 @allure.label('layer', 'ui')
 def test_auth():
+    with allure.step('Preconditions: open SJ site'):
+        base.open()
     with allure.step('Login in SJ site'):
         account.login()
+    with allure.step('Check successful login'):
+        account.check_login()
 
 
 @allure.epic('Authorized')
@@ -83,7 +93,10 @@ def test_auth():
 @allure.severity('normal')
 @allure.label('layer', 'ui')
 def test_logout():
-    with allure.step('Login in SJ site'):
+    with allure.step('Preconditions: open SJ site'):
+        base.open()
+    with allure.step('Login and logout in SJ site'):
         account.login()
-    with allure.step('Logout'):
         account.logout()
+    with allure.step('Check logout'):
+        account.check_logout()

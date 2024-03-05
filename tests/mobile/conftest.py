@@ -1,3 +1,5 @@
+import os
+
 import allure
 import allure_commons
 import pytest
@@ -6,6 +8,10 @@ from dotenv import load_dotenv
 from selene import browser, support
 
 from superjob_project.utils.attach import add_screenshot, add_xml, attach_bstack_video
+
+load_dotenv()
+email = os.getenv("EMAIL")
+password = os.getenv("PASSWORD")
 
 
 def pytest_addoption(parser):
@@ -52,9 +58,6 @@ def android_mobile_management(context):
 
     if context == 'bs':
         session_id = browser.driver.session_id
-
-        with allure.step('tear down app session with id' + session_id):
-            browser.quit()
 
         bstack = options.get_capability('bstack:options')
         login = bstack['userName']
