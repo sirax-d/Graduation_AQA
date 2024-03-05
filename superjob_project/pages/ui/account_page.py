@@ -35,6 +35,7 @@ class AccountPage:
         s(".f-test-button-Sohranit").click()
         s(".f-test-button-Sohranit").click()
 
+
     def check_create_resume(self):
         s("._2yXpl._2d-4z.I16fU._3bSIo").should(have.text("Отлично! Резюме опубликовано"))
 

@@ -14,10 +14,8 @@ from superjob_project.pages.ui.base_page import base
 def test_create_account():
     with allure.step('Preconditions: open SJ site'):
         base.open()
-    with allure.step('Create account'):
+    with allure.step('Create account and check successful registration depending of "if"'):
         base.registration()
-    with allure.step('Check successful registration'):
-        base.check_registration()
 
 
 @allure.epic('Authorized')
@@ -61,11 +59,12 @@ def test_create_resume():
 @allure.severity('normal')
 @allure.label('layer', 'ui')
 def test_resume_visibility_off():
+    with allure.step('Preconditions: open SJ site'):
+        base.open()
     with allure.step('Login in SJ site'):
         account.login()
-    with allure.step('Create other resume'):
+    with allure.step('Create other resume, and close visibility")'):
         account.create_other_resume()
-    with allure.step('Close visibility of the resume'):
         account.close_visibility()
     with allure.step('Check visibility of the resume'):
         account.check_visibility()
