@@ -57,7 +57,7 @@ class AccountPage:
 
     def check_visibility(self):
         browser.open("user/resume/")
-        s(".f-test-resume_card").should(have.text("Доступ к резюме закрыт"))
+        s(".f-test-resume_card").should(have.text("Mix developer"))
 
     def check_response(self):
         browser.open("user/responses/")

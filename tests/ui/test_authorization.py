@@ -63,7 +63,7 @@ def test_resume_visibility_off():
         base.open()
     with allure.step('Login in SJ site'):
         account.login()
-    with allure.step('Create other resume, and close visibility")'):
+    with allure.step('Create other resume, and close visibility.")'):
         account.create_other_resume()
     with allure.step('Check visibility of the resume'):
         account.check_visibility()
