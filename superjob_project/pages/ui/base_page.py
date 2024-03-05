@@ -1,5 +1,4 @@
 import os
-import time
 
 import pytest
 from dotenv import load_dotenv
@@ -36,15 +35,15 @@ class BasePage:
         ss('.f-test-input-year')[1].type(time_work.year_end)
         s('[name="responsibility"]').type(employment.work_description)
         s(".f-test-button-Sohranit").click()
-        time.sleep(3)
+        s('.mOBfu').should(be.not_.present)
         if s('.f-test-formField-error').with_(timeout=1).matching(be.visible):
             pytest.skip('Мы уже зарегистрированы, тест пропущен')
         else:
             self.check_registration()
 
     def check_registration(self):
-            browser.open("")
-            s(".f-test-tooltip-Nastrojki_Vyjti").should(be.visible)
+        browser.open("")
+        s(".f-test-tooltip-Nastrojki_Vyjti").should(be.visible)
 
     def advertising(self):
         browser.open("")
